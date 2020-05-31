@@ -84,7 +84,7 @@ Tasks.belongsTo(Users);
 Projects.hasOne(Tasks);
 Tasks.belongsTo(Projects);
 
-// dataSeeding();
+dataSeeding();
 
 module.exports = {
   db,
@@ -93,61 +93,61 @@ module.exports = {
   Tasks,
 };
 
-// async function dataSeeding() {
-//   await db.sync();
-//   await Users.bulkCreate([
-//     { name: "one", surname: "1", email: "one@one.one" },
-//     { name: "two", surname: "2", email: "two@two.two" },
-//     { name: "three", surname: "3", email: "three@three.three" },
-//     { name: "four", surname: "4", email: "four@four.four" },
-//     { name: "five", surname: "5", email: "five@five.five" },
-//   ]);
-//   await Projects.bulkCreate([
-//     { name: "1 project one", body: "of user one", status: "active", userId: 1 },
-//     {
-//       name: "2 project two",
-//       body: "of user one",
-//       status: "inactive",
-//       userId: 1,
-//     },
-//     { name: "3 project one", body: "of user two", status: "active", userId: 2 },
-//     {
-//       name: "4 project one",
-//       body: "of user three",
-//       status: "active",
-//       userId: 3,
-//     },
-//     {
-//       name: "5 project one",
-//       body: "body four",
-//       status: "completed",
-//       userId: 4,
-//     },
-//   ]);
-//   await Tasks.bulkCreate([
-//     {
-//       name: "task one",
-//       description: "of user 1 , project 1",
-//       score: 90,
-//       status: "active",
-//       userId: 1,
-//       projectId: 1,
-//     },
-//     {
-//       name: "task two",
-//       description: "of user 1 , project 2",
-//       score: 90,
-//       status: "active",
-//       userId: 1,
-//       projectId: 2,
-//     },
-//     {
-//       name: "task three",
-//       description: "of user 4 , project 5",
-//       score: 90,
-//       status: "active",
-//       userId: 4,
-//       projectId: 5,
-//     },
-//   ]);
-// }
+async function dataSeeding() {
+  await db.sync();
+  await Users.bulkCreate([
+    { name: "one", surname: "eeeee", email: "one@one.one" },
+    { name: "two", surname: "dddd", email: "two@two.two" },
+    { name: "three", surname: "cccc", email: "three@three.three" },
+    { name: "four", surname: "bbbb", email: "four@four.four" },
+    { name: "five", surname: "aaaa", email: "five@five.five" },
+  ]);
+  await Projects.bulkCreate([
+    { name: "1 project one", body: "of user one", status: "active", userId: 1 },
+    {
+      name: "2 project two",
+      body: "of user one",
+      status: "inactive",
+      userId: 1,
+    },
+    { name: "3 project one", body: "of user two", status: "active", userId: 2 },
+    {
+      name: "4 project one",
+      body: "of user three",
+      status: "active",
+      userId: 3,
+    },
+    {
+      name: "5 project one",
+      body: "body four",
+      status: "completed",
+      userId: 4,
+    },
+  ]);
+  await Tasks.bulkCreate([
+    {
+      name: "task one",
+      description: "of user 1 , project 1",
+      score: 90,
+      status: "active",
+      userId: 1,
+      projectId: 1,
+    },
+    {
+      name: "task two",
+      description: "of user 1 , project 2",
+      score: 90,
+      status: "active",
+      userId: 1,
+      projectId: 2,
+    },
+    {
+      name: "task three",
+      description: "of user 4 , project 5",
+      score: 90,
+      status: "active",
+      userId: 4,
+      projectId: 5,
+    },
+  ]);
+}

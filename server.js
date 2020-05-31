@@ -14,7 +14,7 @@ app.use("/api/tasks", taskRoute);
 
 const port = process.env.PORT || 4000;
 
-db.sync()
+db.sync({ force: true })
   .then(() => {
     app.listen(port, () =>
       console.log("server is running at http://localhost:4000")
