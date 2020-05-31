@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Users</title>
+  <style>
+    body {
+      text-align: center;
+      padding: 100px;
+    }
+
+    td {
+      border: solid black 1px;
+      padding: 10px;
+      font-size: 1.3rem;
+    }
+  </style>
+</head>
+
+<body>
+  <table>
+    <tr>
+      <td>id</td>
+      <td>name</td>
+      <td>description</td>
+      <td>score </td>
+      <td>status </td>
+      <td>user id</td>
+      <td>user name</td>
+      <td>user surname</td>
+      <td>user email</td>
+      <td>project name</td>
+      <td>project body</td>
+    </tr>
+    {{#each tasks as |task|}}
+    <tr>
+      <td>{{task.id}}</td>
+      <td>{{task.name}}</td>
+      <td>{{task.description}}</td>
+      <td>{{task.score}} </td>
+      <td>{{task.status}} </td>
+      <td>{{task.user.id}}</td>
+      <td>{{task.user.name}}</td>
+      <td>{{task.user.surname}}</td>
+      <td>{{task.user.email}}</td>
+      <td>{{task.project.name}}</td>
+      <td>{{task.project.body}}</td>
+    </tr>
+    {{/each}}
+  </table>
+</body>
+
+</html>
